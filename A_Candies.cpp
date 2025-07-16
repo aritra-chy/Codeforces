@@ -1,0 +1,44 @@
+/*------------------------------------------------------
+    author    : Aritra Chowdhury
+    created   : Sunday | 13 April,2025 | 01:37:15 
+------------------------------------------------------*/
+ 
+#include <bits/stdc++.h>
+#include <string>
+#include <iomanip>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <iostream>
+using namespace std;
+#define read(type) readInt<type>() // Fast read
+#define ll long long
+#define nl "\n"
+#define vi vector<int>
+#define vll vector<long long>
+#define vs vector<string>
+#define MOD 1000000007
+#define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
+int main()
+{
+  fast;
+  int t;
+  cin>>t;
+
+  while(t--)
+  {
+    int n;
+    cin>>n;
+    for(int k=2; ; k++)
+    {
+        int deno=(1<<k)-1; //2^k-1
+        if(deno>n) break;
+        if(n%deno==0)
+        {
+            cout<<n/deno<<nl;
+            break;
+        }
+    }
+  }
+  return 0;
+}
