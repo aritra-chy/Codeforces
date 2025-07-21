@@ -2,9 +2,9 @@
 using namespace std;
 int main()
 {
-    int a,b;
-    cin>>a>>b;
-    int sum = a+b;
-    cout<<sum<<endl;
+    for(int i=1; i<=100; i++)
+    {
+        cout << i << ":" << "Aritra Chowdhury" << endl;
+    }
     return 0;
 }
