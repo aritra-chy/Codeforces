@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : Aritra Chowdhury
-    created   : Monday | 21 July,2025 | 10:29:01 
+    created   : Wednesday | 23 July,2025 | 20:32:38 
 ------------------------------------------------------*/
  
 #include <bits/stdc++.h>
@@ -19,7 +19,13 @@ using namespace std;
 #define vs vector<string>
 #define MOD 1000000007
 #define fast ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0)
- 
+
+ll gcd(ll a,ll b)
+{
+  if(b==0) return a;
+  return gcd(b,a%b);
+}
+
 int main()
 {
   fast;
@@ -27,21 +33,10 @@ int main()
   cin>>t;
   while(t--)
   {
-    ll n;
-    cin>>n;
-    ll ans=0;
-    for(ll i=0; i<n; i++)
-    {
-      ll a,b,c,d;
-      cin>>a>>b>>c>>d;
-      if(a>c) ans += abs(a-c);
-      if(b>d) 
-      {
-        ans += abs(b-d);
-        ans += min({a,c});
-      }
-    }
-    cout<<ans<<nl;
+    ll a,b,k;
+    cin>>a>>b>>k;
+    if(max(a,b)/gcd(a,b)<=k) cout<<1<<nl;
+    else cout<<2<<nl;
   }
   return 0;
 }

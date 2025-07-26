@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : Aritra Chowdhury
-    created   : Monday | 21 July,2025 | 10:29:01 
+    created   : Thursday | 24 July,2025 | 10:01:05 
 ------------------------------------------------------*/
  
 #include <bits/stdc++.h>
@@ -23,24 +23,15 @@ using namespace std;
 int main()
 {
   fast;
-  ll t;
+  int t;
   cin>>t;
+
   while(t--)
   {
-    ll n;
-    cin>>n;
-    ll ans=0;
-    for(ll i=0; i<n; i++)
-    {
-      ll a,b,c,d;
-      cin>>a>>b>>c>>d;
-      if(a>c) ans += abs(a-c);
-      if(b>d) 
-      {
-        ans += abs(b-d);
-        ans += min({a,c});
-      }
-    }
+    int l,r;
+    cin>>l>>r;
+    if(l%2) l--;
+    int ans=(r-l+1)/4;
     cout<<ans<<nl;
   }
   return 0;

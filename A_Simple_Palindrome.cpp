@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : Aritra Chowdhury
-    created   : Monday | 21 July,2025 | 10:29:01 
+    created   : Friday | 25 July,2025 | 20:49:10 
 ------------------------------------------------------*/
  
 #include <bits/stdc++.h>
@@ -23,25 +23,21 @@ using namespace std;
 int main()
 {
   fast;
-  ll t;
+  int t;
   cin>>t;
+
   while(t--)
   {
-    ll n;
+    int n;
     cin>>n;
-    ll ans=0;
-    for(ll i=0; i<n; i++)
+    string vowels="aeiou";
+    string s="";
+    for(int i=0;i<n;i++)
     {
-      ll a,b,c,d;
-      cin>>a>>b>>c>>d;
-      if(a>c) ans += abs(a-c);
-      if(b>d) 
-      {
-        ans += abs(b-d);
-        ans += min({a,c});
-      }
+        s+=vowels[i%5];
     }
-    cout<<ans<<nl;
+    sort(s.begin(),s.end());
+    cout<<s<<nl;
   }
   return 0;
 }

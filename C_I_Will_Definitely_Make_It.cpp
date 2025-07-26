@@ -1,6 +1,6 @@
 /*------------------------------------------------------
     author    : Aritra Chowdhury
-    created   : Monday | 21 July,2025 | 10:29:01 
+    created   : Thursday | 24 July,2025 | 08:35:04 
 ------------------------------------------------------*/
  
 #include <bits/stdc++.h>
@@ -23,25 +23,36 @@ using namespace std;
 int main()
 {
   fast;
-  ll t;
+  int t;
   cin>>t;
+
   while(t--)
   {
-    ll n;
-    cin>>n;
-    ll ans=0;
-    for(ll i=0; i<n; i++)
+    int n,k;
+    cin>>n>>k;
+    vi a(n);
+    for(int i=0; i<n; i++)
     {
-      ll a,b,c,d;
-      cin>>a>>b>>c>>d;
-      if(a>c) ans += abs(a-c);
-      if(b>d) 
+      cin>>a[i];
+    }
+    int val=a[k-1];
+    sort(a.begin(),a.end());
+    int water=0;
+    bool flag=true;
+    for(int i=0; i<n-1; i++)
+    {
+      if(a[i]>=val)
       {
-        ans += abs(b-d);
-        ans += min({a,c});
+        water = a[i+1]-val-1;
+        if(a[i]<=water)
+        {
+            flag=false;
+            break;
+        }
       }
     }
-    cout<<ans<<nl;
+    if(!flag) cout<<"NO"<<nl;
+    else cout<<"YES"<<nl;
   }
   return 0;
 }
